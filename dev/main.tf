@@ -5,10 +5,12 @@ module "eks_cluster" {
   eks_iam_role_name = var.eks_iam_role_name
   node_group_name = var.node_group_name
   eks_nodegrouprole_name = var.eks_nodegrouprole_name    
-  instance_types = var.instance_types
+  launch_template_name = var.launch_template_name
+#  eks_ami_id = var.eks_ami_id
+  instance_type = var.instance_type
   disk_size = var.disk_size
-  ami_type = var.ami_type
+#  ami_type = var.ami_type
   release_version = var.release_version
   kubernetes_version = var.kubernetes_version
-  capacity_type = var.capacity_type
+#  capacity_type = var.capacity_type
 }

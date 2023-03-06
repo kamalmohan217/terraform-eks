@@ -28,7 +28,17 @@ variable "eks_nodegrouprole_name" {
   description = "Provide the Node Group Role Name"
 }
 
-variable "instance_types" {
+variable "launch_template_name" {
+  type = string
+  description = "Provide the Launch Template Name"
+}
+
+#variable "eks_ami_id" {
+#  type = list
+#  description = "Provide the EKS AMI ID"
+#}
+
+variable "instance_type" {
   type = list
   description = "Provide the Instance Type EKS Worker Node" 
 }
@@ -38,15 +48,15 @@ variable "disk_size" {
   description = "Provide the EBS Disk Size"
 }
 
-variable "capacity_type" {
-  type = list
-  description = "Provide the Capacity Type of Worker Node"
-}
+#variable "capacity_type" {
+#  type = list
+#  description = "Provide the Capacity Type of Worker Node"
+#}
 
-variable "ami_type" {
-  type = list
-  description = "Provide the AMI Type"
-}
+#variable "ami_type" {
+#  type = list
+#  description = "Provide the AMI Type"
+#}
 
 variable "release_version" {
   type = list
