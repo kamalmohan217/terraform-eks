@@ -11,6 +11,12 @@ resource "aws_eks_cluster" "eksdemo" {
     subnet_ids = var.subnet_ids
   }
 
+  tags = {
+    Environment = "Dev"
+    Owner       = "Ops"
+    Billing     = "MyProject"
+  } 
+
   depends_on = [
     aws_iam_role_policy_attachment.eksdemorole-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.eksdemorole-AmazonEKSVPCResourceController,
@@ -85,6 +91,12 @@ resource "aws_eks_node_group" "eksnode" {
   ami_type        = var.ami_type[0]
   capacity_type   = var.capacity_type[0]
   release_version = var.release_version[1]
+
+  tags = {
+    Environment = "Dev"
+    Owner       = "Ops"
+    Billing     = "MyProject"
+  }
 
   scaling_config {
     desired_size = 2
