@@ -8,6 +8,7 @@ resource "aws_eks_cluster" "eksdemo" {
 
   vpc_config {
     subnet_ids = var.subnet_ids
+#    subnet_ids = ["subnet-05dd16bc3a73a55ad", "subnet-0ff097df94318f90d", "subnet-06fb9c70358c599e2", "subnet-0a8f252083967e8ba", "subnet-075a21d1c5d03c63d", "subnet-0c6da32ab01e5a2f2" ]                ##### Private and Public Subnet List for Private EKS    
   }
 
   tags = {
@@ -136,6 +137,9 @@ resource "aws_eks_node_group" "eksnode" {
   node_group_name = var.node_group_name
   node_role_arn   = aws_iam_role.eksnoderole.arn
   subnet_ids      = var.subnet_ids
+  
+#  subnet_ids = ["subnet-05dd16bc3a73a55ad", "subnet-0ff097df94318f90d", "subnet-06fb9c70358c599e2"]    #### Private Subnet List for Private EKS NodeGroup  
+  
 #  instance_types  = [ var.instance_types[1] ]
 #  disk_size       = var.disk_size
   ami_type        = var.ami_type[0]
