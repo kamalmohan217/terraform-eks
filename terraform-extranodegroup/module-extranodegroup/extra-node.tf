@@ -16,7 +16,7 @@ resource "aws_launch_template" "eks_launch_template" {
     ebs {
       volume_size = var.disk_size
       encrypted = true
-      kms_key_id = "arn:aws:kms:us-east-2:027330342406:key/d387bfc3-9214-4414-b2eb-8786965c2619"
+      kms_key_id = "arn:aws:kms:us-east-2:027330342406:key/d387bfc3-9214-4414-b2eb-8786965c2619"            ### Provide the kms_key_id for your AWS Account.
     }
   }
 
