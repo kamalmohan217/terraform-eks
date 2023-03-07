@@ -57,6 +57,9 @@ resource "aws_eks_node_group" "eksnodegroup2" {
   node_group_name = var.node_group_name2
   node_role_arn   = var.eks_nodegrouprole_name            #aws_iam_role.eksnoderole.arn
   subnet_ids      = var.subnet_ids
+  
+#  subnet_ids = ["subnet-05dd16bc3a73a55ad", "subnet-0ff097df94318f90d", "subnet-06fb9c70358c599e2"]    #### Private Subnet List For For Private EKS NodeGroup  
+  
 #  instance_types  = [ var.instance_types[1] ]
 #  disk_size       = var.disk_size
   ami_type        = var.ami_type[0]
