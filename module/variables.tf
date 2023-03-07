@@ -34,13 +34,13 @@ variable "disk_size" {
 
 }
 
-#variable "capacity_type" {
+variable "capacity_type" {
 
-#}
+}
 
-#variable "ami_type" {
+variable "ami_type" {
 
-#}
+}
 
 variable "release_version" {
 

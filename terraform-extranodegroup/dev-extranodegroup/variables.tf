@@ -28,7 +28,17 @@ variable "eks_nodegrouprole_name" {
   description = "Provide the Node Group Role Name"
 }
 
-variable "instance_types" {
+variable "launch_template_name" {
+  type = string
+  description = "Provide the Launch Template Name for Extra Node Group"
+}
+
+variable "eks_cluster_name" {
+  type = string
+  description = "Provide the EKS Cluster Name"
+}
+
+variable "instance_type" {
   type = list
   description = "Provide the Instance Type EKS Worker Node"
 }

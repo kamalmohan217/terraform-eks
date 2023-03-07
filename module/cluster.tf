@@ -84,7 +84,7 @@ resource "aws_launch_template" "eks_launch_template" {
 #  image_id               = var.eks_ami_id[1]          ## You can use https://github.com/awslabs/amazon-eks-ami/releases 
   instance_type          = var.instance_type[1]
   name                   = var.launch_template_name
-  update_default_version = true
+#  update_default_version = true
 
   key_name = "eks-test"
 
@@ -138,8 +138,8 @@ resource "aws_eks_node_group" "eksnode" {
   subnet_ids      = var.subnet_ids
 #  instance_types  = [ var.instance_types[1] ]
 #  disk_size       = var.disk_size
-#  ami_type        = var.ami_type[0]
-#  capacity_type   = var.capacity_type[0]
+  ami_type        = var.ami_type[0]
+  capacity_type   = var.capacity_type[0]
   release_version = var.release_version[1] 
 
   tags = {

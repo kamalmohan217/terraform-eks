@@ -18,7 +18,15 @@ variable "eks_nodegrouprole_name" {
 
 }
 
-variable "instance_types" {
+variable "launch_template_name" {
+
+}
+
+variable "eks_cluster_name" {
+
+}
+
+variable "instance_type" {
 
 }
 

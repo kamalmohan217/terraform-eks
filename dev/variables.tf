@@ -48,15 +48,15 @@ variable "disk_size" {
   description = "Provide the EBS Disk Size"
 }
 
-#variable "capacity_type" {
-#  type = list
-#  description = "Provide the Capacity Type of Worker Node"
-#}
+variable "capacity_type" {
+  type = list
+  description = "Provide the Capacity Type of Worker Node"
+}
 
-#variable "ami_type" {
-#  type = list
-#  description = "Provide the AMI Type"
-#}
+variable "ami_type" {
+  type = list
+  description = "Provide the AMI Type"
+}
 
 variable "release_version" {
   type = list
