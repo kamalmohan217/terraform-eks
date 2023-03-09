@@ -43,7 +43,7 @@ resource "aws_route_table" "private_route_table_2" {
 }
 
 resource "aws_route_table_association" "private_route_table_association_2" {
-#  count = "${length(slice(data.aws_availability_zones.azs.names, 0))}"        ## "${length(data.aws_availability_zones.azs.names)}"
+#  count = "${length(slice(data.aws_availability_zones.azs.names, 0, 2))}"        ## "${length(data.aws_availability_zones.azs.names)}"
   subnet_id      = aws_subnet.private_subnet[1].id                             ## aws_subnet.private_subnet[count.index].id
   route_table_id = aws_route_table.private_route_table_2.id
 }
