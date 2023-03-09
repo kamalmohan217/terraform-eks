@@ -67,3 +67,8 @@ variable "kubernetes_version" {
   type = list
   description = "Desired Kubernetes master version."
 }
+
+variable "env" {
+  type = string
+  description = "Provide the Environment for EKS Cluster and NodeGroup"
+}

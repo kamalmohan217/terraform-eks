@@ -12,7 +12,7 @@ resource "aws_eks_cluster" "eksdemo" {
   }
 
   tags = {
-    Environment = "Dev"
+    Environment = var.env     ##"Dev"
     Owner       = "Ops"
     Billing     = "MyProject"
   } 
@@ -102,7 +102,7 @@ resource "aws_launch_template" "eks_launch_template" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Environment = "Dev"
+      Environment = var.env        ##"Dev"
       Owner       = "Ops"
       Billing     = "MyProject"
       "kubernetes.io/cluster/${var.eks_cluster}" = "owned"
@@ -112,7 +112,7 @@ resource "aws_launch_template" "eks_launch_template" {
   tag_specifications {
      resource_type = "volume"
      tags = {
-       Environment = "Dev"
+       Environment = var.env       ##"Dev"
        Owner       = "Ops"
        Billing     = "MyProject"
        "kubernetes.io/cluster/${var.eks_cluster}" = "owned"
@@ -136,7 +136,7 @@ resource "aws_eks_node_group" "eksnode" {
   cluster_name    = var.eks_cluster
   node_group_name = var.node_group_name
   node_role_arn   = aws_iam_role.eksnoderole.arn
-  subnet_ids      = var.subnet_ids
+  subnet_ids      = ["subnet-065191413863e069b", "subnet-0c294d4de2581d2cf", "subnet-03a0e24abfb476ed7"]      #var.subnet_ids
   
 #  subnet_ids = ["subnet-05dd16bc3a73a55ad", "subnet-0ff097df94318f90d", "subnet-06fb9c70358c599e2"]    #### Private Subnet List for Private EKS NodeGroup  
   
@@ -147,7 +147,7 @@ resource "aws_eks_node_group" "eksnode" {
   release_version = var.release_version[1] 
 
   tags = {
-    Environment = "Dev"
+    Environment = var.env        ##"Dev"
     Owner       = "Ops"
     Billing     = "MyProject"
   }

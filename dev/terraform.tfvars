@@ -1,7 +1,10 @@
 ###########Provide Parameters for EKS Cluster and NodeGroup########################
 
 region = "us-east-2"
-subnet_ids = ["subnet-7cb8b707", "subnet-c9236e84", "subnet-ad5f95c5"]
+#subnet_ids = ["subnet-7cb8b707", "subnet-c9236e84", "subnet-ad5f95c5"]
+
+subnet_ids = ["subnet-03a0e24abfb476ed7", "subnet-016ea4a817864387d", "subnet-065191413863e069b", "subnet-066a4f099d6879bed", "subnet-0c294d4de2581d2cf", "subnet-03463a923a82b609b"]
+
 eks_cluster = "eks-demo-cluster"
 eks_iam_role_name = "eks-iam-role"
 node_group_name = "eks-nodegroup"
@@ -14,3 +17,4 @@ ami_type = ["AL2_x86_64", "CUSTOM"]
 release_version = ["1.24.10-20230217", "1.22.15-20221222"]
 kubernetes_version = ["1.22", "1.23", "1.24", "1.25"]
 capacity_type = ["ON_DEMAND", "SPOT"]
+env = "Dev"

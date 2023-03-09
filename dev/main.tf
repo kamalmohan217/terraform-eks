@@ -13,4 +13,5 @@ module "eks_cluster" {
   release_version = var.release_version
   kubernetes_version = var.kubernetes_version
   capacity_type = var.capacity_type
+  env = var.env
 }

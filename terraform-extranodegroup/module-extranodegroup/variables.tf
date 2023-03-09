@@ -45,3 +45,7 @@ variable "ami_type" {
 variable "release_version" {
 
 }
+
+variable "env" {
+
+}

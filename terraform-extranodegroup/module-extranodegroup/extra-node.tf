@@ -23,7 +23,7 @@ resource "aws_launch_template" "eks_launch_template" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Environment = "Dev"
+      Environment = var.env       ##"Dev"
       Owner       = "Ops"
       Billing     = "MyProject"
       "kubernetes.io/cluster/${var.eks_cluster_name}" = "owned"
@@ -33,7 +33,7 @@ resource "aws_launch_template" "eks_launch_template" {
   tag_specifications {
      resource_type = "volume"
      tags = {
-       Environment = "Dev"
+       Environment = var.env      ##"Dev"
        Owner       = "Ops"
        Billing     = "MyProject"
        "kubernetes.io/cluster/${var.eks_cluster_name}" = "owned"
@@ -83,7 +83,7 @@ resource "aws_eks_node_group" "eksnodegroup2" {
   }
   
   tags = {
-    Environment = "Dev"
+    Environment = var.env              ##"Dev"
     Owner       = "Ops"
     Billing     = "MyProject"
   }

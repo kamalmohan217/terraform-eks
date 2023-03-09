@@ -62,3 +62,8 @@ variable "release_version" {
   type = list
   description = "AMI version of the EKS Node Group"
 }
+
+variable "env" {
+  type = string
+  description = "Provide the Name of Environment for Extra NodeGroup"
+}

@@ -49,3 +49,7 @@ variable "release_version" {
 variable "kubernetes_version" {
 
 }
+
+variable "env" {
+
+}
