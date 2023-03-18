@@ -186,6 +186,10 @@ resource "aws_iam_role" "eksnoderole" {
 
   assume_role_policy = file("trust-relationship-nodegroup.json")
 
+  inline_policy {
+    name = "autoscale_inline_policy"
+    policy = file("autoscalepolicy.json")
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "eksnode-AmazonEKSWorkerNodePolicy" {
