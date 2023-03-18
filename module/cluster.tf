@@ -170,6 +170,7 @@ resource "aws_eks_node_group" "eksnode" {
 
   depends_on = [
     aws_launch_template.eks_launch_template,
+    aws_iam_role.eksnoderole,
     aws_eks_cluster.eksdemo,
     aws_iam_role_policy_attachment.eksnode-AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.eksnode-AmazonEKS_CNI_Policy,
