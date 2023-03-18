@@ -185,9 +185,9 @@ resource "aws_eks_node_group" "eksnode" {
 resource "aws_iam_role" "eksnoderole" {
   name = var.eks_nodegrouprole_name
 
-  assume_role_policy = file("trust-relationship-nodegroup.json")
+  assume_role_policy = file("trust-relationship-nodegroup.json")              ## This is the trust relationship for IAM Role.
 
-  inline_policy {
+  inline_policy {                                                             ## This is the inline policy for autoscaling attached with the IAM Role.
     name = "autoscale_inline_policy"
     policy = file("autoscalepolicy.json")
   }
