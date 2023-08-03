@@ -64,7 +64,7 @@ resource "aws_eks_node_group" "eksnodegroup2" {
 #  disk_size       = var.disk_size
   ami_type        = var.ami_type[0]
   capacity_type   = var.capacity_type[0]
-  release_version = var.release_version[1]
+  release_version = var.release_version[2]
 
   scaling_config {
     desired_size = 2
